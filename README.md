@@ -82,9 +82,3 @@ The demos are split by category. See the linked markdown files for a tree view o
 cli-agent-examples/   # CLI examples
 ai-ide-examples/      # IDE examples
 ```
-
-Other ideas you could explore:
-
-- **Django + Gemini** – run Gemini against a full-stack Django app.
-- **FastAPI + OpenAI** – build an API layer that prompts OpenAI models.
-- **Flask + Claude** – let Claude automate Flask app refactoring.
