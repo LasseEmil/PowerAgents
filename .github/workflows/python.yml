@@ -1,0 +1,60 @@
+name: Python examples CI
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      CLAUDE_API_KEY: ${{ secrets.CLAUDE_API_KEY }}
+      KIRO_API_KEY: ${{ secrets.KIRO_API_KEY }}
+      CURSOR_TOKEN: ${{ secrets.CURSOR_TOKEN }}
+      WINDSURF_TOKEN: ${{ secrets.WINDSURF_TOKEN }}
+      AGENT_TOKEN: ${{ secrets.AGENT_TOKEN }}
+    strategy:
+      matrix:
+        example:
+          - cli-agent-examples/openai
+          - cli-agent-examples/gemini
+          - cli-agent-examples/claude
+          - cli-agent-examples/general-agent
+          - ai-ide-examples/kiro
+          - ai-ide-examples/cursor
+          - ai-ide-examples/windsurf
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: |
+          cd ${{ matrix.example }}
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+      - name: Run tests
+        run: |
+          cd ${{ matrix.example }}
+          if [ -d tests ]; then python -m pytest -q; fi
+
+  benchmark:
+    runs-on: ubuntu-latest
+    needs: test
+    env:
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      CLAUDE_API_KEY: ${{ secrets.CLAUDE_API_KEY }}
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - name: Install requirements
+        run: pip install -r cli-agent-examples/openai/requirements.txt
+      - name: Run benchmarks
+        run: python benchmark-tests/run_benchmarks.py
+      - name: Upload results
+        uses: actions/upload-artifact@v3
+        with:
+          name: benchmark-results
+          path: benchmark-tests/results/latest.txt

@@ -1,0 +1,153 @@
+# AI Developer Tools
+
+This directory provides a list of notable AI-powered developer tools. We separate them into two broad categories:
+
+- **Agentic CLI Tools** – command-line interfaces that run autonomous agents against your codebase.
+- **AI-Integrated Development Environments** – IDEs with built-in agents or copilots that operate across entire projects.
+
+The bullet list below demonstrates how each entry might be rendered using the Jinja template in `tool_template.jinja`.
+
+- **OpenHands**
+  - Purpose/USP: autonomous dev agent that fixes bugs & opens PRs faster than a junior engineer
+  - Key functions: multi-step planning, sandboxed exec, web/API calls
+  - Environment: web dashboard & local runner
+  - Organisation: All-Hands AI (OSS, MIT)
+  - MCP: _client_ – enable under **Settings → MCP**
+  - News: "v0.47.0 released", "GitLab support landed", "feedback UI refreshed"
+  - Links: <https://app.all-hands.dev/> | <https://github.com/All-Hands-AI/OpenHands>
+- **shellingham**
+  - Purpose/USP: tiny Python helper that sniffs which shell you’re running
+  - Key functions: `detect_shell()` → (name, path)
+  - Environment: import in any local Python project
+  - Organisation: Sarugaku OSS
+  - MCP: none
+  - News: "1.5.4 published", "100 M downloads", "still rock-solid"
+  - Links: <https://pypi.org/project/shellingham/> | <https://github.com/sarugaku/shellingham>
+- **Letta**
+  - Purpose/USP: framework that gives LLM agents long-term, transparent memory
+  - Key functions: vector memories, ADE orchestration, tool-calling
+  - Environment: Python lib or Letta Cloud
+  - Organisation: Letta AI (seed-funded)
+  - MCP: _client + server_ via `letta mcp ...`
+  - News: "0.8.7 launched", "testing tools added", "docs revamped"
+  - Links: <https://www.letta.com/> | <https://github.com/letta-ai/letta>
+- **Private-GPT**
+  - Purpose/USP: 100 % offline RAG for your docs
+  - Key functions: chunk → embed → vector → LLM; Gradio UI
+  - Environment: self-hosted Docker/CLI
+  - Organisation: Zylon AI
+  - MCP: _server add-on_ (community template)
+  - News: "recipes shipped", "Docker improved", "0.6.x patches"
+  - Links: <https://www.zylon.ai/privategpt> | <https://github.com/zylon-ai/private-gpt>
+- **Shell-GPT**
+  - Purpose/USP: terminal copilot that writes & explains commands on demand
+  - Key functions: chat, stdin piping, multi-backend models
+  - Environment: CLI (Linux/macOS/Windows)
+  - Organisation: community (TheR1D)
+  - MCP: none
+  - News: "1.4.5 out", "LiteLLM integration", "bug fixes everywhere"
+  - Links: <https://pypi.org/project/shell-gpt/> | <https://github.com/TheR1D/shell_gpt>
+- **nvim-gpt**
+  - Purpose/USP: ChatGPT inside NeoVim for in-buffer refactors
+  - Key functions: `:GPTOpen`, visual ops, history panel
+  - Environment: local Neovim plugin
+  - Organisation: Archibate OSS
+  - MCP: none (community fork in progress)
+  - News: "1.2 k★ reached", "Lua refactor merged", "speed tweaks added"
+  - Links: <https://github.com/archibate/nvim-gpt#readme> | <https://github.com/archibate/nvim-gpt>
+- **Cursor**
+  - Purpose/USP: AI-fork of VS Code that edits whole projects with agent mode
+  - Key functions: chat, autocomplete, BugBot, background agent
+  - Environment: desktop IDE (Win/macOS/Linux)
+  - Organisation: Cursor AI Inc.
+  - MCP: _client_ – one-click setup
+  - News: "1.0 dropped", "BugBot added", "memories previewed"
+  - Links: <https://www.cursor.com/> | <https://github.com/cursor/cursor>
+- **Windsurf**
+  - Purpose/USP: enterprise IDE with Cascade multi-step code agent
+  - Key functions: full-repo edits, autocomp, upgraded terminal
+  - Environment: desktop IDE & JetBrains/Vim plugins
+  - Organisation: Exafunction → Windsurf
+  - MCP: _client_ (stdio / SSE)
+  - News: "plugin store live", "MCP catalog seeded", "TOU updated"
+  - Links: <https://windsurf.com/> | <https://github.com/Exafunction/windsurf.vim>
+- **Codex CLI**
+  - Purpose/USP: chat-driven dev agent in your terminal, works offline
+  - Key functions: read/edit code, sandbox exec, git-aware flows
+  - Environment: Node-based CLI
+  - Organisation: OpenAI
+  - MCP: none
+  - News: "open-sourced", "o3 default set", "Azure PR merged"
+  - Links: <https://help.openai.com/en/articles/11096431-openai-codex-cli-getting-started> | <https://github.com/openai/codex>
+- **Assistants API v2**
+  - Purpose/USP: cloud backend for multi-tool AI assistants
+  - Key functions: threads/runs, Code-Interpreter, File & Web search
+  - Environment: OpenAI REST API
+  - Organisation: OpenAI
+  - MCP: protocol-agnostic
+  - News: "Responses API announced", "deprecation set", "tools expanded"
+  - Links: <https://platform.openai.com/docs/assistants> | <https://github.com/openai/openai-cookbook>
+- **OpenAI.fm**
+  - Purpose/USP: playground to demo the latest TTS voices
+  - Key functions: text input → instant audio, style sliders, share links
+  - Environment: browser web app
+  - Organisation: OpenAI
+  - MCP: none
+  - News: "new voices launched", "voice sliders added", "UI polished"
+  - Links: <https://www.openai.fm/> | <https://github.com/openai/openai-fm>
+- **CL4R1T4S**
+  - Purpose/USP: crowdsourced library of leaked & official system prompts
+  - Key functions: prompt dumps, diffs, contrib guide
+  - Environment: Git repo (browse or clone)
+  - Organisation: community (elder-plinius)
+  - MCP: none
+  - News: "Claude-4 dump added", "mirrors created", "issues triaged"
+  - Links: <https://github.com/elder-plinius/CL4R1T4S> | <https://github.com/elder-plinius/CL4R1T4S>
+- **Manus AI**
+  - Purpose/USP: closed-beta agent platform that plans tasks and executes tools
+  - Key functions: GAIA benchmark agent, multi-model orchestration
+  - Environment: cloud SaaS
+  - Organisation: Butterfly Effect / Manus AI
+  - MCP: undisclosed
+  - News: "raised $75 M", "US review announced", "paid plan launched"
+  - Links: <https://manus.im/> | —
+- **AnythingLLM**
+  - Purpose/USP: desktop & Docker app for local RAG + no-code agents
+  - Key functions: workspace RAG, agent builder, cost dashboard
+  - Environment: desktop / self-hosted server
+  - Organisation: Mintplex Labs
+  - MCP: _client_ – JSON config
+  - News: "no-code builder live", "UI overhaul teased", "roadmap updated"
+  - Links: <https://anythingllm.com/> | <https://github.com/Mintplex-Labs/anything-llm>
+- **The Big Prompt Library**
+  - Purpose/USP: mega-repo of system, jailbreak & research prompts
+  - Key functions: categorized markdown, scripts, security guides
+  - Environment: browse/clone; use with any LLM
+  - Organisation: 0xEB community
+  - MCP: none
+  - News: "4 k prompts hit", "weekly merges continue", "readme reorganised"
+  - Links: <https://github.com/0xeb/TheBigPromptLibrary> | <https://github.com/0xeb/TheBigPromptLibrary>
+- **tinygrad**
+  - Purpose/USP: ultra-minimal DL framework chasing a sovereign AMD stack
+  - Key functions: lazy tensors, autodiff, HW back-ends
+  - Environment: Python lib; run local/on-device
+  - Organisation: Tiny Corp (George Hotz)
+  - MCP: none
+  - News: "AMD stack milestone", "ROCm patches merged", "benchmarks posted"
+  - Links: <https://tinygrad.org/> | <https://github.com/tinygrad/tinygrad>
+- **promptl-py**
+  - Purpose/USP: DSL for writing dynamic LLM prompt chains
+  - Key functions: declarative `<step>` templates, Python bindings
+  - Environment: Python library
+  - Organisation: Latitude-dev OSS
+  - MCP: none
+  - News: "0.1.0 first release", "examples added", "docs seeded"
+  - Links: <https://promptl.ai/> | <https://github.com/latitude-dev/promptl-py>
+- **Warp AI**
+  - Purpose/USP: agentic development environment—modern terminal with multi-AI agents
+  - Key functions: agent mode, AI command suggestions, Warp Drive knowledge
+  - Environment: Rust-based terminal (macOS, Linux, Windows)
+  - Organisation: Warp Dev
+  - MCP: _client_ – native support in Preview
+  - News: "Warp 2.0 launched", "Windows build released", "MCP preview shipped"
+  - Links: <https://www.warp.dev/> | <https://github.com/warpdotdev/Warp>

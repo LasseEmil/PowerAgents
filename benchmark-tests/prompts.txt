@@ -1,0 +1,4 @@
+# Sample prompts for benchmarking
+What is the capital of France?
+Write a Python function to add two numbers.
+Summarize the following paragraph.
