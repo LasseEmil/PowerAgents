@@ -8,6 +8,7 @@ Source: design.md
 # Tasks: Example Service
 
 ## Milestone 1
-| # | Task | Owner | Status |
-|---|------|-------|--------|
-| 1-1 | Set up repository | @dev | ☐ |
+
+| #   | Task              | Owner | Status |
+| --- | ----------------- | ----- | ------ |
+| 1-1 | Set up repository | @dev  | ☐      |

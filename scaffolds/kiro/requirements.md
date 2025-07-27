@@ -7,7 +7,9 @@ Owner: example@corp.com
 # Feature: Example Service
 
 ## Overview
+
 A short overview explaining what this service does.
 
 ## Functional Requirements (EARS)
+
 1. **WHEN** called, **THE SYSTEM SHALL** respond with "hello".
