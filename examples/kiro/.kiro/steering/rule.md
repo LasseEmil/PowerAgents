@@ -1,1 +1,0 @@
-Always follow the spec.
