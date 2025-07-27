@@ -1,0 +1,5 @@
+{
+  "modelProvider": "gemini",
+  "initialPrompt": "Please review the tests.",
+  "theme": "light"
+}
