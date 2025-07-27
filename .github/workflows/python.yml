@@ -6,11 +6,13 @@ jobs:
     strategy:
       matrix:
         example:
-          - openai
-          - gemini
-          - claude
-          - kiro
-          - general-agent
+          - cli-agent-examples/openai
+          - cli-agent-examples/gemini
+          - cli-agent-examples/claude
+          - cli-agent-examples/general-agent
+          - ai-ide-examples/kiro
+          - ai-ide-examples/cursor
+          - ai-ide-examples/windsurf
     steps:
       - uses: actions/checkout@v3
       - name: Set up Python
@@ -19,9 +21,9 @@ jobs:
           python-version: '3.11'
       - name: Install dependencies
         run: |
-          cd examples/${{ matrix.example }}
+          cd ${{ matrix.example }}
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       - name: Run tests
         run: |
-          cd examples/${{ matrix.example }}
+          cd ${{ matrix.example }}
           if [ -d tests ]; then python -m pytest -q; fi
