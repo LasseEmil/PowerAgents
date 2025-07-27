@@ -8,7 +8,6 @@ def send_prompt(prompt: str) -> str:
     # In a real project you'd call openai.ChatCompletion.create
     return f"mocked response for: {prompt}"
 
-
 # Example advanced usage options:
 # response = openai.ChatCompletion.create(
 #     model="gpt-4o",

@@ -4,7 +4,6 @@
 def run(prompt: str) -> str:
     return f"echo: {prompt}"
 
-
 # Future extensions:
 # def run_with_memory(prompt: str, history: list[str]) -> str:
 #     """Example of keeping conversation context."""
