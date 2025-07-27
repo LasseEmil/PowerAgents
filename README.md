@@ -13,7 +13,8 @@ This repository collects scaffolds and documentation for multiple LLM-driven dev
 │   ├── gemini.md
 │   ├── general-agent.md
 │   ├── kiro.md
-│   └── windsurf.md
+│   ├── windsurf.md
+│   └── credentials.md       # environment variables
 ├── scaffolds/                 # example project layouts
 │   ├── claude/
 │   ├── codex/
@@ -22,6 +23,7 @@ This repository collects scaffolds and documentation for multiple LLM-driven dev
 │   ├── general-agent/
 │   ├── kiro/
 │   └── windsurf/
+├── benchmark-tests/         # prompt benchmarks and results
 ├── cli-agent-examples/        # CLI oriented samples
 │   ├── claude/
 │   ├── gemini/
@@ -38,20 +40,6 @@ This repository collects scaffolds and documentation for multiple LLM-driven dev
 ├── ai-ide-examples.md         # details for IDE demos
 └── README.md
 ```
-
-## Scaffolds Explained
-
-| Directory                  | Tool                      | Notes                                                        |
-| -------------------------- | ------------------------- | ------------------------------------------------------------ |
-| `scaffolds/codex/`         | **OpenAI Codex CLI**      | Contains `AGENTS.md` and a sample config.                    |
-| `scaffolds/gemini/`        | **Google Gemini CLI**     | Includes `GEMINI.md` and settings.                           |
-| `scaffolds/claude/`        | **Anthropic Claude Code** | Provides `CLAUDE.md` and an example command.                 |
-| `scaffolds/kiro/`          | **AWS Kiro**              | Demonstrates `requirements.md`, `design.md`, and `tasks.md`. |
-| `scaffolds/cursor/`        | **Cursor IDE**            | Minimal notes for using Cursor's agent mode.                 |
-| `scaffolds/windsurf/`      | **Windsurf IDE**          | Shows how to steer the Cascade agent.                        |
-| `scaffolds/general-agent/` | Generic                   | Minimal setup for experimenting with new agents.             |
-
-Additional background on each tool can be found in the `docs/` directory. Details about each demo live in [cli-agent-examples.md](cli-agent-examples.md) and [ai-ide-examples.md](ai-ide-examples.md).
 
 ## Tool Categories
 
@@ -74,11 +62,21 @@ The tools in this repo fall into two umbrellas.
 | Cursor   | VS Code fork with background agent mode |
 | Windsurf | Enterprise IDE with cascade agent       |
 
+
+Additional background on each tool can be found in the `docs/` directory. Details about each demo live in [cli-agent-examples.md](cli-agent-examples.md) and [ai-ide-examples.md](ai-ide-examples.md).
+
 ## Example Projects
 
 The demos are split by category. See the linked markdown files for a tree view of each folder.
 
-```
-cli-agent-examples/   # CLI examples
-ai-ide-examples/      # IDE examples
-```
+## Credentials
+
+Required API keys are documented in [docs/credentials.md](docs/credentials.md). Store
+these values as GitHub Secrets so the workflow can access them during tests.
+
+## Benchmark Tests
+
+The `benchmark-tests/` directory contains a small harness that exercises each
+example using prompts from `prompts.txt`. Results are written to
+`benchmark-tests/results/latest.txt` by the GitHub Actions workflow.
+
